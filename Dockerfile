@@ -15,7 +15,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get update && apt-get -y -o Dpkg::Options::="--force-confold" upgrade
 
 # Instalación de paquetes necesarios para compilar Buildroot
-RUN apt-get install -y git build-essential wget cpio python-is-python3 python3 unzip bc mercurial subversion gcc-multilib vim ccache squashfs-tools zip gettext mtools dosfstools libncurses5-dev cmake g++-multilib automake rsync file
+RUN apt-get install -y git build-essential wget cpio python-is-python3 python3 unzip bc mercurial subversion gcc-multilib vim ccache squashfs-tools zip gettext mtools dosfstools libncurses5-dev cmake g++-multilib automake rsync file zlib1g-dev
 
 # Limpieza del gestor de paquetes
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
